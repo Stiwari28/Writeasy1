@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset = "utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Signup Form
+        </title>
+
+        <!-- add icon link -->
+        <link rel = "icon" href = "rbg.png" sizes="16x16"
+        type = "image/x-icon">
+        <link rel="stylesheet" href="google.fb_button.css">
+        <link rel="stylesheet" href="login+signup.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gluten:wght@300&display=swap" rel="stylesheet">
+
+</head>
+    <body>
+      <div class="div1">
+     <Form action="signup.php" method="post"> <img src="C:\S My projects\Web development\Forms\Login form\Logo.png" alt="Writeasy Logo" title="Writeasy" height="200px" width="200px">
+           <br>
+             
+            
+              <div class="container">
+                <input type="email" title="Enter your email" placeholder="Email" name="Email" id="email" onkeyup="EnableDisable(this)" required> <br>
+                <input type="text" title="Enter your Full Name" placeholder="Full Name" name="name" onkeyup="EnableDisable(this)" required id="name"> <br>
+                <div class="pswrd">
+                <input type="password" title="Enter your password" placeholder="Password" name="psw" onkeyup="EnableDisable(this)" id="psw" required  >
+                <i class="far fa-eye" id="eye2"  ></i>
+              </div>
+                <button type="submit" title="Sign-up" class="cont" id="btnSubmit">Sign-Up</button><br>
+                  <div style="font-family: 'Gluten', cursive;"><input type="checkbox" checked> &nbsp; Remember me</div><br>
+                  <h4> or </h4><br>
+
+<button class="loginBtn loginBtn--google" title="Continue with Google">
+  Signup with Google
+</button>
+<button class="loginBtn loginBtn--facebook" title="Continue with Facebook">
+  Signup with Facebook
+</button>
+
+                 <br><br> <br><div style="font-size: small; font-family: 'Gluten', cursive;">Already have account? <a href="Loginform- Minor.html" style="font-size: small; font-family: 'Gluten', cursive;" title="click to login">Login</a></div>
+              </div> 
+            </form></div>
+            
+<script src="signup.js"></script>
+            <script> 
+           let d = document, [inputs, knapp] = [
+    d.querySelectorAll('[type="text"], [type="password"]'),
+    d.querySelector('#btnSubmit')]
+knapp.disabled = true
+
+for (i = 0; i < inputs.length; i++) {
+  inputs[i].addEventListener('input',() => {
+    let values = []
+    inputs.forEach(v => values.push(v.value))
+    knapp.disabled = values.includes('')
+  })
+}
+
+const togglePassword = document.querySelector('#eye2');
+  const password = document.querySelector('#psw');
+ 
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
+  </script>
+    </body>
+</html>
